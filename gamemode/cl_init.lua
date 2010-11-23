@@ -70,7 +70,7 @@ hook.Add( "GUIMouseReleased", "clientMouseReleased", clientMouseReleased )
 
 function GM:CreateMove( cmd )
 	
-	if ( LocalPlayer():Alive() and LocalPlayer():Team() != TEAM_GAMEMASTER ) then
+	if LocalPlayer():Alive() then
 	
 		cmd:SetForwardMove( cmd:GetSideMove() )
 		
@@ -89,10 +89,6 @@ function GM:CreateMove( cmd )
 		
 		cmd:SetSideMove( 0 )
 		
-	end
-	
-	if ( LocalPlayer():Team() == TEAM_GAMEMASTER ) then
-		cmd:SetViewAngles( Angle( 0, 90, 0 ) )
 	end
 	
 end
