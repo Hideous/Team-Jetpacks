@@ -18,7 +18,9 @@ CLASS.AvoidPlayers	= true // Push players that are able to walk through this pla
 CLASS.Selectable	= false // When false, this class cannot be chosen from the select class menu
 CLASS.FullRotation	= false // Allow the player's model to rotate completely with their view (i.e. looking 90 degrees up will rotate your player model 90 degrees)
 CLASS.RespawnTime           = 0 // 0 means use the default spawn time chosen by gamemode
- 
+
+CLASS.JetpackFuel = 100 //This is for the jetpacks later.
+
 local viewpos = vector_origin 
 
 function CLASS:Loadout( pl ) // This is called when the player is given their equipment

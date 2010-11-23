@@ -59,6 +59,8 @@ TEAM_RED = 1
 TEAM_BLUE = 2
 
 CAM_DIST = 512
+
+JETPACK_STRENGTH = 15
  
 local classes = {"AssaultClass"}
  
@@ -89,3 +91,32 @@ function GM:PlayerBindPress( ply, bind, down )
 	return false
 	
 end
+
+function jetpack(ply)
+
+	if ply:KeyDown(IN_ATTACK2) then
+	
+		if SERVER == true then
+			if (ply:OnGround()) then
+				local startpos = ply:GetPos()
+				
+				ply:SetPos(Vector(startpos.x, startpos.y, startpos.z + 1))
+				
+			end
+		end
+
+		ply:SetVelocity(Vector(0,0,JETPACK_STRENGTH))
+		
+	end
+end
+
+function sharedThink()
+
+	for k, v in pairs(player.GetAll()) do
+	
+		jetpack(v)//Shared because of prediction, bro. Or something.
+	
+	end
+
+end
+hook.Add("Think", "sharedThink", sharedThink)
