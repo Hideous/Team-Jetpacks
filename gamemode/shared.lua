@@ -41,8 +41,8 @@ GM.RoundPreStartTime = 5			// Preperation time before a round starts
 GM.RoundPostLength = 5				// Seconds to show the 'x team won!' screen at the end of a round
 GM.RoundEndsWhenOneTeamAlive = false	// CS Style rules
  
-GM.EnableFreezeCam = true			// TF2 Style Freezecam
-GM.DeathLingerTime = 2				// The time between you dying and it going into spectator mode, 0 disables
+GM.EnableFreezeCam = false			// TF2 Style Freezecam
+GM.DeathLingerTime = 3				// The time between you dying and it going into spectator mode, 0 disables
  
 GM.SelectModel = false               // Can players use the playermodel picker in the F1 menu?
 GM.SelectColor = false				// Can players modify the colour of their name? (ie.. no teams)

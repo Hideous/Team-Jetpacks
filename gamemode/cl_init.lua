@@ -4,6 +4,9 @@
 include("shared.lua")
 
 local viewpos = vector_origin
+local viewfov = 0
+
+local lasttime = 0
 
 function clientInit()
 
@@ -24,6 +27,20 @@ function clientThink()
 	tracedata.filter = player.GetAll()
 	ptrace = util.TraceLine( tracedata )
 
+	
+	//Shoddy attempt to get freezecam zoom working
+	/*if !LocalPlayer():Alive() then
+		viewfov = viewfov - 25 * os.clock() - lasttime //Decrease fov by 25 per second if player is dead. Gives freezecam zoom-in.
+		
+		if viewfov < 20 then viewfov = 20 end
+	end
+	
+	if LocalPlayer():Alive() then
+		viewfov = 0
+	end
+	
+	lasttime = os.clock()*/
+	
 end
 hook.Add("Think", "clientThink", clientThink)
 
@@ -108,6 +125,8 @@ function GM:CalcView( ply, origin, angles, fov )
 	view.origin.z = view.origin.z - normalizedMouseY * 25
 	
 	view.angles = ( viewpos - view.origin ):Angle()
+	
+	//view.fov = fov - viewfov
 	
 	//view.angles.y = view.angles.y * -1
 	
