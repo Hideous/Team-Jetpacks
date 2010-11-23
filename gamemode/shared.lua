@@ -4,7 +4,7 @@ GM.Email 	= ""
 GM.Website 	= ""
 GM.Help		= "Kill the other team and capture their flag!"
  
-GM.Data = {}
+GM.Data = {}							//test
  
 DeriveGamemode("fretta")
 IncludePlayerClasses()					// Automatically includes files in "gamemode/player_class"
