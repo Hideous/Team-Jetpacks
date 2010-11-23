@@ -1,0 +1,26 @@
+"Gamemode"
+{
+	"name"		"Team Jetpacks"
+	"version"	"1"
+
+	"author_name"	"Hideous and Don Andy"
+	"author_email"	""
+	"author_url"	""
+	
+	"icon"		""
+	"info"		""
+	"hide"		"0"
+
+	"mappattern"
+	{
+		"1"	"^tjp"
+	}
+	
+	"fretta_maps"
+	{
+		"1"	"^^tjp_"
+	}
+
+	"selectable"	"1"
+	"description"	"Grab the enemy flag!"
+}
