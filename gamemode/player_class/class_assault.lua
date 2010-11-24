@@ -17,8 +17,9 @@ CLASS.FullRotation			= false // Allow the player's model to rotate upwards, etc 
 CLASS.Base					= "BasicClass"
  
 function CLASS:Loadout( pl )
- 
-	pl:Give( "weapon_357" )
+	
+	pl:GiveAmmo(30, "pistol")
+	pl:Give( "weapon_tjp_shotgun" )
  
 end
  
