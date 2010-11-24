@@ -96,7 +96,7 @@ function jetpack(ply)
 
 	if ply:KeyDown(IN_ATTACK2) then
 	
-		if SERVER == true then
+		if SERVER then
 			if (ply:OnGround()) then
 				local startpos = ply:GetPos()
 				
@@ -105,7 +105,12 @@ function jetpack(ply)
 			end
 		end
 
-		ply:SetVelocity(Vector(0,0,JETPACK_STRENGTH))
+		local sidemove = 0
+		
+		if ply:KeyDown(IN_MOVELEFT) then sidemove = -JETPACK_STRENGTH / 2 end
+		if ply:KeyDown(IN_MOVERIGHT) then sidemove = JETPACK_STRENGTH / 2 end
+		
+		ply:SetVelocity(Vector(sidemove,0,JETPACK_STRENGTH))
 		
 	end
 end
