@@ -62,7 +62,7 @@ CAM_DIST = 512
 
 JETPACK_STRENGTH = 15
  
-local classes = {"AssaultClass"}
+local classes = {"AssaultClass","RetrieverClass"}
  
 function GM:CreateTeams()
  

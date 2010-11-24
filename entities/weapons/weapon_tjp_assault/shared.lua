@@ -13,7 +13,7 @@ SWEP.HoldType			=	"ar2"
 
 //Primary fire settings
 SWEP.Primary.Sound		=	"weapons/m4a1/m4a1-1.wav"
-SWEP.Primary.Damage		=	"6"
+SWEP.Primary.Damage		=	8
 SWEP.Primary.TakeAmmo	=	1
 SWEP.Primary.ClipSize	=	300
 SWEP.Primary.DefaultClip = 	300
@@ -36,7 +36,7 @@ function SWEP:PrimaryAttack()
 	
 	bullet.Spread = vector_origin;
 	bullet.Dir = self.Owner:GetAimVector( ) + math.Rand( -1, 1 ) * Vector( 0, 0, self.Primary.Spread )
-	bullet.Tracer = 2
+	bullet.Tracer = 1
 	bullet.TracerName = "Tracer"
 	bullet.Damage = self.Primary.Damage
 	bullet.AmmoType = self.Primary.Ammo
@@ -44,8 +44,6 @@ function SWEP:PrimaryAttack()
 	
 	
 	self:ShootEffects()
-
-	if CLIENT then return end
 	
 	self.Owner:FireBullets(bullet) //Pow!
 	self:EmitSound(Sound(self.Primary.Sound))
