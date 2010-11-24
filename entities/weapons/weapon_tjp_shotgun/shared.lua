@@ -48,9 +48,7 @@ function SWEP:PrimaryAttack()
 
 	if CLIENT then return end
 	
-	self.Owner:LagCompensation( true )
 	self.Owner:FireBullets(bullet) //Pow!
-	self.Owner:LagCompensation( false )
 	self:EmitSound(Sound(self.Primary.Sound))
 	self:TakePrimaryAmmo(self.Primary.TakeAmmo)
 	self:SetNextPrimaryFire(CurTime() + self.Primary.Delay)
