@@ -9,7 +9,7 @@ local viewfov = 0
 local lasttime = 0
 
 function clientInit()
-
+	
 	gui.EnableScreenClicker(true)
 
 end
@@ -131,3 +131,23 @@ function GM:CalcView( ply, origin, angles, fov )
 	return view
  
 end
+
+surface.CreateFont ( "coolvetica", ScreenScale(32), 700, true, false, "CV20", false, false )
+
+function nameText(ply)
+
+	if (!ply:Alive()) then return end
+	
+	local offset = Vector(0,0,85)
+	local ang = Angle(0,0,-90)
+	local pos = ply:GetPos() + offset + ang:Up()
+	
+	ang:RotateAroundAxis( ang:Forward(), 90 )
+	ang:RotateAroundAxis( ang:Right(), 90 )
+
+	cam.Start3D2D( pos, Angle( 0, ang.y, 90 ), 0.25 )
+		draw.DrawText( ply:GetName(), "CV20", 2, 2, team.GetColor(ply:Team()), TEXT_ALIGN_CENTER )
+	cam.End3D2D()
+	
+end
+hook.Add("PostPlayerDraw", "nameText", nameText)

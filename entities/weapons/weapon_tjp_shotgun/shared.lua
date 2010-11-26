@@ -13,7 +13,7 @@ SWEP.HoldType			=	"shotgun"
 
 //Primary fire settings
 SWEP.Primary.Sound		=	"weapons/m3/m3-1.wav"
-SWEP.Primary.Damage		=	8
+SWEP.Primary.Damage		=	4
 SWEP.Primary.TakeAmmo	=	1
 SWEP.Primary.ClipSize	=	6
 SWEP.Primary.DefaultClip = 	6
@@ -21,7 +21,7 @@ SWEP.Primary.Automatic	=	false
 SWEP.Primary.Recoil		=	10 //Not relevant while view-punch doesn't work
 SWEP.Primary.Delay		= 0.8
 SWEP.Primary.Force		= 260
-SWEP.Primary.NumberofShots = 4
+SWEP.Primary.NumberofShots = 3
 SWEP.Primary.Spread		=	0.25
 
 function SWEP:PrimaryAttack()

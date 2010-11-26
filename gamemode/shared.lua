@@ -68,18 +68,23 @@ function GM:CreateTeams()
  
 	if ( !GAMEMODE.TeamBased ) then return end
  
-	team.SetUp( TEAM_RED, "Red", Color( 232, 21, 24 ), true )
+	team.SetUp( TEAM_RED, "Red", Color( 180, 36, 0 ), true )
 	team.SetSpawnPoint( TEAM_RED, { "info_player_start", "info_player_terrorist", "info_player_rebel", "info_player_deathmatch" } )
 	team.SetClass( TEAM_RED, classes)
 	
 	
-	team.SetUp( TEAM_BLUE, "Blue", Color( 24, 21, 232 ), true )
+	team.SetUp( TEAM_BLUE, "Blue", Color( 6, 121, 189 ), true )
 	team.SetSpawnPoint( TEAM_BLUE, { "info_player_start", "info_player_counterterrorist", "info_player_combine", "info_player_deathmatch" } )
 	team.SetClass( TEAM_BLUE, classes)
  
 	team.SetUp( TEAM_SPECTATOR, "Spectators", Color( 200, 200, 200 ), true )
 	team.SetSpawnPoint( TEAM_SPECTATOR, { "info_player_start", "info_player_terrorist", "info_player_counterterrorist", "info_player_combine", "info_player_rebel" } ) 
  
+end
+
+function GM:PlayerSpawn(ply)
+	if SERVER then return end
+	
 end
 
 function GM:PlayerBindPress( ply, bind, down )
