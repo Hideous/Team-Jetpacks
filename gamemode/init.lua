@@ -5,7 +5,7 @@ include("shared.lua");
 
 function serverThink()
 
-	for k, v in pairs(player.GetAll()) do //Lock all the players to 0 on the y-axis
+	/*for k, v in pairs(player.GetAll()) do //Lock all the players to 0 on the y-axis
 		local plyPos = v:GetPos()
 		
 		if (plyPos.y != 0) then
@@ -13,7 +13,7 @@ function serverThink()
 			v:SetPos(Vector(plyPos.x, 0, plyPos.z))
 			
 		end
-	end
+	end*/
 	
 end
 

@@ -124,4 +124,36 @@ function sharedThink()
 	end
 
 end
-hook.Add("Think", "sharedThink", sharedThink)
+//hook.Add("Think", "sharedThink", sharedThink)
+
+function freezeYAxis(data)
+	local posdata = data:GetOrigin()
+
+	data:SetOrigin(Vector(posdata.x, 0, posdata.y))
+end
+
+function moveJetpacks(ply, data)
+	if (ply:KeyDown(IN_ATTACK2)) then
+	
+		/*if SERVER then
+			if (ply:OnGround()) then
+				local startpos = ply:GetPos()
+				
+				ply:SetPos(Vector(startpos.x, startpos.y, startpos.z + 1))
+				
+			end
+		end*/
+	
+		if ply:OnGround() then data:SetUpSpeed(300) end
+	
+		local sidemove = 0
+	
+		if ply:KeyDown(IN_MOVELEFT) then sidemove = -JETPACK_STRENGTH / 2 end
+		if ply:KeyDown(IN_MOVERIGHT) then sidemove = JETPACK_STRENGTH / 2 end
+	
+		data:SetVelocity(data:GetVelocity() + Vector(sidemove,0,JETPACK_STRENGTH))
+	end
+	
+	//freezeYAxis(data)
+end
+hook.Add("Move", "moveJetpacks", moveJetpacks)
