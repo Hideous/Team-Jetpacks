@@ -84,7 +84,7 @@ end
 
 function GM:PlayerSpawn(ply)
 	if SERVER then return end
-	
+	gui.EnableScreenClicker(true) //In case someone manages to disable it
 end
 
 function GM:PlayerBindPress( ply, bind, down )

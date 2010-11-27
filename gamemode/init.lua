@@ -1,6 +1,7 @@
 AddCSLuaFile("shared.lua");
 AddCSLuaFile("cl_init.lua");
 
+include("sv_downloads.lua");
 include("shared.lua");
 
 function serverThink()

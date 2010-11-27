@@ -2,6 +2,7 @@
 //He can be found here: http://www.facepunch.com/member.php?u=103210
 
 include("shared.lua")
+include("cl_hud.lua")
 
 local viewpos = vector_origin
 local viewfov = 0
@@ -11,6 +12,9 @@ local lasttime = 0
 function clientInit()
 	
 	gui.EnableScreenClicker(true)
+	surface.CreateFont ( "coolvetica", ScreenScale(32), 700, true, false, "plytext", false, false )
+	surface.CreateFont ( "Whiskey Town", ScreenScale(32), 500, true, false, "WhiskeyHUD", false, false)
+	surface.CreateFont ( "Whiskey Town", ScreenScale(22), 500, true, false, "WhiskeyHUDSmall", false, false)
 
 end
 hook.Add("Initialize", "clientInit", clientInit)
@@ -132,8 +136,6 @@ function GM:CalcView( ply, origin, angles, fov )
  
 end
 
-surface.CreateFont ( "coolvetica", ScreenScale(32), 700, true, false, "CV20", false, false )
-
 function nameText(ply)
 
 	if (!ply:Alive()) then return end
@@ -146,7 +148,7 @@ function nameText(ply)
 	ang:RotateAroundAxis( ang:Right(), 90 )
 
 	cam.Start3D2D( pos, Angle( 0, ang.y, 90 ), 0.25 )
-		draw.DrawText( ply:GetName(), "CV20", 2, 2, team.GetColor(ply:Team()), TEXT_ALIGN_CENTER )
+		draw.DrawText( ply:GetName(), "plytext", 2, 2, team.GetColor(ply:Team()), TEXT_ALIGN_CENTER )
 	cam.End3D2D()
 	
 end
