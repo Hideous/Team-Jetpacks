@@ -4,7 +4,7 @@ AddCSLuaFile("shared.lua")
 include('shared.lua')
 
 ENT.aHealth = 70
-ENT.aModel = "models/items/HealthKit.mdl"
+ENT.aModel = "models/tjp/healthcross.mdl"
 ENT.gib = 1
 ENT.brkOnUse = 1
 ENT.dieTime = 0
