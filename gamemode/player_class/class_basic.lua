@@ -19,7 +19,7 @@ CLASS.Selectable	= false // When false, this class cannot be chosen from the sel
 CLASS.FullRotation	= false // Allow the player's model to rotate completely with their view (i.e. looking 90 degrees up will rotate your player model 90 degrees)
 CLASS.RespawnTime           = 0 // 0 means use the default spawn time chosen by gamemode
 
-CLASS.JetpackFuel = 100 //This is for the jetpacks later.
+CLASS.MaxJetpackFuel = 100 //This is for the jetpacks later.
 
 local viewpos = vector_origin 
 

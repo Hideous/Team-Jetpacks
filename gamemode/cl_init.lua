@@ -3,6 +3,7 @@
 
 include("shared.lua")
 include("cl_hud.lua")
+include("player_extension.lua")
 
 local viewpos = vector_origin
 local viewfov = 0

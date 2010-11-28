@@ -3,6 +3,7 @@ AddCSLuaFile("cl_init.lua");
 
 include("sv_downloads.lua");
 include("shared.lua");
+include("player_extension.lua");
 
 function serverThink()
 
@@ -33,5 +34,6 @@ function GM:PlayerSpawn( ply )
 	self.BaseClass:PlayerSpawn(ply)
 	
 	ply:CrosshairDisable() //Don't want the crosshair in the middle of the screen
+	ply:RefuelJetpack()
 	
 end

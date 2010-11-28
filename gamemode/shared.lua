@@ -138,7 +138,7 @@ function freezeYAxis(data)
 end
 
 function moveJetpacks(ply, data)
-	if (ply:KeyDown(IN_ATTACK2)) then
+	if (ply:KeyDown(IN_ATTACK2) && ply:JetpackFuel != 0) then
 	
 		/*if SERVER then
 			if (ply:OnGround()) then

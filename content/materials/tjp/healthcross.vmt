@@ -1,0 +1,12 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "tjp/healthcross"
+	"$selfillum" "1"
+	"$phong" "1"
+	
+	$bumpmap "tjp/flatbump"
+	$phongexponent 5
+	$phongboost	1.0
+	$phongfresnelranges	"[0 0.5 1]"
+	
+}
